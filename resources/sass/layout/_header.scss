@@ -1,0 +1,139 @@
+.header {
+    height: $height-section-medium;
+    background-color: $bg-transparent;
+    color: $color-primary;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    width: 100%;
+    letter-spacing: 1px;
+
+    @include responsive(tablet) {
+        position: absolute;
+    }
+
+    & + * {
+        margin-top: $height-section-medium;
+        
+        @include responsive(tablet) {
+            // margin-top: 0;
+        }
+    }
+
+
+    &__inner {
+        max-width: $width-inner-content;
+        padding: $spacing-small $spacing-standard;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__logo-container {
+        flex-grow: 1;
+        height: 100%;
+
+        a{
+            display: block;
+            max-width: 10rem;
+        }
+    }
+
+    &__logo {
+        display: block;
+        max-height: 100%;
+        padding: $spacing-tiny;
+        background-image: linear-gradient(to bottom right, rgba($color-primary-light , .9) , rgba($color-primary , .9));
+        border-radius: $border-radius-standard;
+        transform: scale(1.1);
+    }
+
+    &__toggle-button {
+        font-size: 1.8em;
+        line-height: calc(#{$height-section-medium} - 2 * #{$spacing-standard} );
+        cursor: pointer;
+        display: none;
+        position: relative;
+        z-index: 999;
+
+        @include responsive(tablet) {
+            display: block;
+        }
+    }
+
+    &__close-menu {
+        color: $white;
+        position: fixed;
+        top: $spacing-more;
+        right: $spacing-more;
+        font-size: 2em;
+    }
+
+    &__menu {
+        list-style-type: none;
+        display: block;
+        
+        &-item {
+            display: inline-block;
+            height: calc(#{$height-section-medium} - 2 * #{$spacing-standard} );
+            line-height: calc(#{$height-section-medium} - 2 * #{$spacing-standard} );
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            
+            &:not(:last-child) {
+                margin-right: $spacing-more;
+            }
+
+            button {
+                font-size: inherit;
+            }
+            i {
+                margin-right: $spacing-small;
+            }
+        }
+        
+        // hidden on tablet and phones
+
+        @include responsive(tablet) {
+            display: none;
+        }
+
+        // mobile version
+
+        &--mobile {
+            position: fixed;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: $white;
+            background-image: linear-gradient(to bottom left , rgba($color-primary-dark , 1) , rgba($color-primary-light , .95));
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .header__menu-item {                
+                font-size: 3rem;
+                height:auto;
+
+                &:not(:last-child) {
+                    margin-bottom: $spacing-more;
+                }
+            }
+        }
+    }
+}

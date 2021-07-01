@@ -1,0 +1,38 @@
+.form {
+    
+    &__label {
+        margin-right: $spacing-standard;
+        }    
+
+    &__input {
+        border: 1px solid $color-primary;
+        padding: $spacing-small;
+        padding-left:  $spacing-standard;
+        border-radius: $border-radius-standard;
+        @include standard-tipography;
+        color: $color-text;
+        transition: all $animation-time-standard;
+        &:focus,
+        &:active {
+            outline: none;
+            background-color: $color-primary-light;
+            color: $white;            
+        }
+
+        &::placeholder {
+            color: $color-primary;
+        }
+
+        &:focus::placeholder {
+            color: $white;
+        }
+        
+        &::selection {
+            color: $color-primary;
+        }
+    }
+    
+
+
+}
+

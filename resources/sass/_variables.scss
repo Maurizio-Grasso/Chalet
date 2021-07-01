@@ -1,0 +1,103 @@
+// Sizes
+
+$width-inner-content: 160rem;
+$height-section-small: 5rem;
+$height-section-medium: 7rem;
+$height-section-big: 20rem;
+$height-section-huge: 50rem;
+
+$border-radius-standard : 5px;
+$border-radius-more : 15px;
+
+// Spacing
+
+$spacing-tiny       : .5rem;
+$spacing-small      : 1rem;
+$spacing-standard   : 2rem;
+$spacing-more       : 3rem;
+$spacing-huge       : 7.5rem;
+
+$font-size-standard : 1.6rem;
+$font-family-standard: 'Roboto', sans-serif;
+
+
+// Colors
+
+$white: white;
+$black: #000000;
+$gray: rgb(199, 199, 199);
+$orange: rgb(255, 142, 37);
+
+$color-primary: rgb(16, 83, 16);
+$color-primary-light: rgb(52, 133, 52);
+$color-primary-dark: rgb(5, 48, 5);
+
+$color-secondary: rgb(243, 154, 52);
+$color-secondary-light: lighten($color-secondary , 20%);
+$color-secondary-dark: darken($color-secondary , 20%);
+
+$bg-transparent: rgba($white , .8);
+$bg-transparent-light: rgba($white , .25);
+
+
+$color-text : rgb(112, 112, 112);
+
+$animation-time-standard : .25s;
+$animation-time-slow : .6s;
+$animation-time-very-slow : 1.2s;
+
+
+// MixIns
+
+@mixin standard-tipography {
+    font-size: $font-size-standard;
+    font-family: $font-family-standard;
+    letter-spacing: 1px;
+    line-height: 1.25;
+}
+
+@mixin shadow-standard {
+    box-shadow: 0 0 1rem rgba($black , .2);
+}
+
+@mixin shadow-enhanced {
+    box-shadow: 0 0 2rem rgba($black , .3);
+}
+
+@mixin clearfix {
+    &::after{
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+// Media Queries
+
+@mixin responsive($breakpoint) {
+
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {    // 600px
+            @content
+        };
+    }
+
+    @if $breakpoint == tablet {
+        @media (max-width: 64em) {    // 1024px
+            @content
+        };
+    }
+
+    @if $breakpoint == desktop {
+        @media (max-width: 75em) {    // 1200px
+            @content
+        };
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) {    // 1800px
+            @content
+        };
+    }
+
+}

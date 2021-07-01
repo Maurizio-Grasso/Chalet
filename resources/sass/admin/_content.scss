@@ -1,0 +1,143 @@
+// MEDIA QUERY DA TABLET IN SU
+ @media (min-width: 768px){
+  // SCROLLBAR--------------------
+    /* width */
+    ::-webkit-scrollbar {
+        width: .8rem;
+        height: 80%;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 5px; 
+        background: #d8ae7f98;
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #d8af7f;
+        border-radius: 5px; 
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5a5034; 
+      }
+  // FINE SCROLLBAR----------------
+}
+
+
+
+//   MAIN-------------------
+
+#general-container{
+  height: 100vh;
+  overflow: hidden;
+  #logo-header{
+    max-height: 50px;
+  }
+
+  main {
+    background-color: #ffefd5;
+    // background-color: #d8af7f;
+    height: calc(100vh - 50px);
+    margin-top:50px;
+    color:#5a5034;
+
+    @media (min-width: 768px){
+      margin-top: 0;
+    }
+
+    & h1,h2,h3 {
+      margin-bottom:2rem;
+      &.tab-title{
+        margin-top: 2rem;
+      }
+    }
+
+    & .card-link{
+        color:inherit;
+        text-decoration: none; 
+
+    }
+    
+    & .card-row{
+      margin-bottom: 3rem;
+    }
+    & .card {
+        background-color: #d8af7f;
+        color: #5a5034;
+        margin-bottom: 10px;
+    }
+
+    a.btn-our-btn{
+        background-color: #f7a64a;
+
+    }
+  }
+  
+  .navbar{
+    height: 50px;
+  }
+  .bg-green{
+    background-color: #385744;
+    color:#ffefd5;
+  }
+  
+  table{
+    margin-top: 30px;
+    background-color: #d8ae7fad;
+    border-radius: .25rem;
+    width: 100%;
+    border-radius: 5px;
+    overflow-x: auto;
+    
+    thead{
+      background-color: #d8af7f;
+      font-size: 1.7rem;
+    }
+    th,td{
+      padding:10px 20px;
+    }
+    a {
+      color: inherit;
+    }
+    @media (max-width: 768px){
+      table{
+          display: block;
+        }
+      }
+  }
+  .popup-box-delete-apt {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #d8ae7fd2;
+
+    .popup-block{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 5px;
+      padding: 5px;
+      height: 20rem;
+      width: 25rem;
+      background-color:#385744;
+      color: #ffefd5;
+      
+      .popup-text-block{
+        position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      }
+    }
+}
+}

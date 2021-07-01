@@ -1,0 +1,50 @@
+.register-form,
+.login-form {
+    @include shadow-enhanced;
+    width: 100%;
+    max-width: 40rem;
+    background: $color-secondary;
+    // background: $white;
+    // color: $color-primary;
+    margin: 0 auto;
+    padding: $spacing-standard $spacing-more;
+    border-radius: $border-radius-standard;
+    text-align: center;
+    .form__label ,
+    .form__label {
+        display: block;
+        margin-bottom: $spacing-small;
+        text-align: left;
+    }
+
+}
+
+.width_container {
+    width: 100%;
+    height: calc(100vh - #{$height-section-medium});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-primary;
+    background-image: linear-gradient(to bottom right , $color-primary-light , $color-primary);
+
+}
+
+.input_width {
+    width: 100%;
+    margin-bottom: $spacing-tiny;
+}
+
+div[class$="-form"] {
+    margin-bottom: $spacing-tiny;
+}
+
+.btn--reg {
+    margin: $spacing-small 0;
+    width: 100%;
+}
+
+.btn--log {
+    margin: $spacing-small 0;
+    width: 50%;
+}

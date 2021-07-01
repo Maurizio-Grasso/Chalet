@@ -1,0 +1,91 @@
+.home-section {
+    max-width: $width-inner-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $white;
+    padding: $spacing-huge $spacing-standard $spacing-standard;
+
+    &__heading {
+        // margin-top: $spacing-huge;
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+        letter-spacing: 3px;
+        margin-bottom: $spacing-huge;
+    }
+}
+
+.become-host {
+    height: $height-section-huge;
+    
+    &__background {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-image: url('/img/host-become.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: $border-radius-standard;
+        position: relative;
+        padding: $spacing-standard;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            bottom: 0;
+            background-color:$white;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity $animation-time-slow;
+        }
+
+        &:hover {
+            
+            &::before {
+                opacity: .75;
+            }
+
+            .become-host__text-box {
+                background-color: $color-primary-light;
+            }
+
+            .become-host__cta {
+                color: $white;
+            }
+
+        }
+    }
+
+    &__text-box {
+        position: relative;
+        z-index: 3;
+        background-color: rgba($white , .75);
+        transition: all $animation-time-slow;
+        border-radius: $border-radius-more;
+        text-align: center;
+        width: 100%;
+        max-width: 50rem;
+    }
+    
+    &__cta {
+        &:link , 
+        &:hover , 
+        &:active ,
+        &:visited {
+            padding: $spacing-standard;
+            text-decoration: none;
+            color: $color-primary-light;
+            font-size: 3.5rem;
+            letter-spacing: 3px;
+            display: block;
+            height: 100%;
+            width: 100%;
+            font-weight: bold;
+            transition: all $animation-time-slow;
+        }
+    }
+}
+

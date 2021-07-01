@@ -1,0 +1,29 @@
+nav .sidebar-sticky {
+    color:#ffefd5;
+
+    a {
+        color:inherit;
+        text-decoration: none; 
+        
+        &:hover{
+            color: #d8af7f;
+        }
+    }
+
+    .nav_header {
+        height: 70px;
+    }
+
+    & li{
+        padding-top:15px;
+        padding-bottom:15px;
+
+        svg{
+            margin-right: 10px;
+        }
+    }
+
+    
+
+    
+}

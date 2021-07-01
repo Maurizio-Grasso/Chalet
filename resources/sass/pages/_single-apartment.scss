@@ -1,0 +1,335 @@
+#form-anchor {
+    padding-top: $height-section-medium;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+}
+.service-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.single-service {
+    flex: 1 0 calc(100% /3);
+
+    @include responsive(tablet) {
+        flex: 1 0 calc(100% /2);
+    }
+
+
+    margin-bottom: $spacing-standard;
+
+    &__icon {
+        color: $color-primary;
+        margin-right: $spacing-standard;
+        font-size: 2rem;
+    }
+}
+
+hr {
+    border-top-width: 0;
+    border-color: $gray;
+    margin-bottom: $spacing-standard;
+}
+.container {
+    padding: 0 $spacing-standard;
+    max-width: $width-inner-content;
+    margin: 0 auto;
+    background-color: $white;
+
+    i {
+        padding-right: $spacing-tiny;
+        @include responsive(phone) {
+            font-size: 150%;
+        }
+    }
+    i.fa-star {
+        @include responsive(phone) {
+            font-size: initial;
+        }
+    }
+    .apartment-title {
+        padding: $spacing-standard 0;
+    }
+    .font-weight--bold {
+        font-weight: bold;
+    }
+    .form-container {
+        display: flex;
+        padding: $spacing-more 0;
+        @include responsive(tablet) {
+            display: block;
+        }
+        .left-container {
+            width: 65%;
+            padding-right: $spacing-huge;
+
+            section {
+                margin-bottom: $spacing-more;
+                @include responsive(tablet) {
+                    margin-bottom: $spacing-standard;
+                }
+            }
+
+            @include responsive(tablet) {
+                width: 100%;
+            }
+
+            .type-host {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: $spacing-standard;
+                .host-img {
+                    width: $spacing-huge;
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .apartment-service {
+                padding: $spacing-small 0;
+                .service-card {
+                    padding: $spacing-small 0;
+                    display: flex;
+                    
+                    &:not(:last-child){
+                        margin-bottom: $spacing-standard;
+                    }
+                    
+                    .service-icon {
+                        color: $color-primary;
+                        font-size: 2rem;
+                        margin-right: $spacing-standard;
+                    }
+                }
+            }
+            .apartment-description {
+                padding: $spacing-standard 0;
+            }
+            .additional-services {
+                padding: $spacing-standard 0;
+                h3 {
+                    padding: $spacing-small 0;
+                }
+                .row {
+                    display: flex;
+                    padding: $spacing-small 0;
+                    .ad-service-card {
+                        width: 50%;
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        .right-container {
+            width: 35%;
+            @include responsive(tablet) {
+                width: 100%;
+                padding-top: 0;
+            }
+
+            .contact-form {
+                position: sticky;
+                top: calc(#{$height-section-medium} + 2rem);
+                @include responsive(tablet) {
+                    position: static;
+                }
+                .form__input {
+                    margin-bottom: $spacing-more;
+                }
+                
+                form {
+                    background: $color-secondary;
+                    width: calc(100% - 2 * #{$spacing-standard});
+                    margin: 0 auto;
+                    padding: $spacing-standard;
+                    border-radius: $border-radius-standard;
+                    @include shadow-enhanced;
+
+                    @include responsive(tablet) {
+                        width: 100%;
+                    }
+                }
+                p,
+                h3 {
+                    margin-bottom: $spacing-small;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                }
+                .btn {
+                    margin: $spacing-small 0;
+                }
+                input,
+                textarea,
+                .btn {
+                    display: block;
+                    width: 100%;
+                }
+                textarea {
+                    min-height: $height-section-big;
+                }
+                textarea {
+                    resize: none;
+                }
+            }
+        }
+    }
+    .map-title {
+        padding: $spacing-standard 0;
+        h3 {
+            padding-bottom: $spacing-small;
+        }
+    }
+
+    .chalet-map {
+        // flex: 0 0 50%;
+        
+        @include responsive(tablet) {
+            // position: static;
+            height: $height-section-huge;
+            width: 100%;
+        }
+
+    }
+
+    .hosted-by {
+        display: flex;
+        align-items: center;
+        padding: $spacing-standard 0;
+
+
+        @include responsive(tablet) {
+            display: block;
+            text-align: center;
+        }
+        
+        & > section {
+            flex: 0 0 calc(100% / 3);
+            p {
+                line-height: 2.5rem;
+            }
+            @include responsive(tablet) {
+                flex: none;
+                margin-bottom: $spacing-more;
+            }
+        }
+
+        .type-host {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            @include responsive(tablet) {
+                justify-content: center;
+            }
+
+            .host-img {
+                width: $spacing-huge;
+                margin-right: $spacing-standard;
+                img {
+                    padding-right: $spacing-standard;
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .redirect-btn {
+            text-align: center;
+            @include responsive(phone) {
+                width: 100%;
+            }
+            .host-btn {
+                width: 80%;
+            }
+        }
+    }
+    .sponsored-gallery {
+        padding: $spacing-huge 0;
+        .sponsored-slider-phone {
+            display: none;
+            @include responsive(phone) {
+                display: block;
+            }
+            .slider-phone-cards {
+                .slider-phone-card {
+                    width: 100%;
+                    height: 30rem;
+                    margin-bottom: $spacing-huge;
+                    .slider-phone-img {
+                        height: 100%;
+                        width: 100%;
+                        padding: $spacing-small;
+                        img {
+                            border-radius: $border-radius-standard;
+                            @include shadow-enhanced;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .slider-phone-description {
+                        padding-left: $spacing-small;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sponsored-apt-section {
+    padding-bottom: $spacing-more;
+    p {
+        margin-bottom: $spacing-standard;
+    }
+}
+
+.msgSent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255,255,255,.5);
+    z-index: 999;
+
+    &__inner-box{
+        position: absolute;
+        // height: $height-section-huge;
+        width: 100%;
+        max-width: 50rem;
+        background-color: $white;
+        border-radius: $border-radius-standard;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        @include shadow-enhanced;
+        // z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: $spacing-more;
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: $spacing-more;
+        color: $color-primary;
+    }
+    &__text {
+        margin-bottom: $spacing-more;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+    &__button{
+
+    }
+}
