@@ -3,91 +3,91 @@
     return [
         [
             'apartment_id' => 1,
-            'img_path' => "apt1_photo1.jpg",
+            'img_path' => "apartment_images/apt1_photo1.jpg",
             'img_description' => "copertina appartamento",
             'is_cover' => 1
         ],
         [
             'apartment_id' => 1,
-            'img_path' => "apt1_photo2.jpg",
+            'img_path' => "apartment_images/apt1_photo2.jpg",
             'img_description' => "",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 1,
-            'img_path' => "apt1_photo3.jpg",
+            'img_path' => "apartment_images/apt1_photo3.jpg",
             'img_description' => "",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 2,
-            'img_path' => "apt2_photo1.jpg",
+            'img_path' => "apartment_images/apt2_photo1.jpg",
             'img_description' => "immagine copertina",
             'is_cover' => 1
         ],
         [
             'apartment_id' => 2,
-            'img_path' => "apt2_photo2.jpg",
+            'img_path' => "apartment_images/apt2_photo2.jpg",
             'img_description' => "",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 2,
-            'img_path' => "apt2_photo3.jpg",
+            'img_path' => "apartment_images/apt2_photo3.jpg",
             'img_description' => "particolare appartamento",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 3,
-            'img_path' => "apt3_photo1.jpg",
+            'img_path' => "apartment_images/apt3_photo1.jpg",
             'img_description' => "immagine copertina",
             'is_cover' => 1
         ],
         [
             'apartment_id' => 3,
-            'img_path' => "apt3_photo2.jpg",
+            'img_path' => "apartment_images/apt3_photo2.jpg",
             'img_description' => "",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 3,
-            'img_path' => "apt3_photo3.jpg",
+            'img_path' => "apartment_images/apt3_photo3.jpg",
             'img_description' => "particolare appartamento",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 4,
-            'img_path' => "apt4_photo1.jpg",
+            'img_path' => "apartment_images/apt4_photo1.jpg",
             'img_description' => "immagine copertina",
             'is_cover' => 1
         ],
         [
             'apartment_id' => 4,
-            'img_path' => "apt4_photo2.jpg",
+            'img_path' => "apartment_images/apt4_photo2.jpg",
             'img_description' => "",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 4,
-            'img_path' => "apt4_photo3.jpg",
+            'img_path' => "apartment_images/apt4_photo3.jpg",
             'img_description' => "particolare appartamento",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 5,
-            'img_path' => "apt5_photo1.jpg",
+            'img_path' => "apartment_images/apt5_photo1.jpg",
             'img_description' => "immagine copertina",
             'is_cover' => 1
         ],
         [
             'apartment_id' => 5,
-            'img_path' => "apt5_photo2.jpg",
+            'img_path' => "apartment_images/apt5_photo2.jpg",
             'img_description' => "",
             'is_cover' => 0
         ],
         [
             'apartment_id' => 5,
-            'img_path' => "apt5_photo3.jpg",
+            'img_path' => "apartment_images/apt5_photo3.jpg",
             'img_description' => "particolare appartamento",
             'is_cover' => 0
         ],
@@ -919,5 +919,77 @@
             'img_path' => "apartment_images/apt21_photo7.jpg",
             'img_description' => "immagine copertina",
             'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 22,
+            'img_path' => "apartment_images/apt22_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 23,
+            'img_path' => "apartment_images/apt23_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 24,
+            'img_path' => "apartment_images/apt24_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 25,
+            'img_path' => "apartment_images/apt25_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 26,
+            'img_path' => "apartment_images/apt26_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 27,
+            'img_path' => "apartment_images/apt27_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 28,
+            'img_path' => "apartment_images/apt28_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 29,
+            'img_path' => "apartment_images/apt29_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 30,
+            'img_path' => "apartment_images/apt30_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 31,
+            'img_path' => "apartment_images/apt31_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 32,
+            'img_path' => "apartment_images/apt32_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 33,
+            'img_path' => "apartment_images/apt33_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
         ],
     ];

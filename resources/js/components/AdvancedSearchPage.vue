@@ -227,7 +227,7 @@
                 if (this.filteredApartments.length > 1) this.sortApartments();  // Se il filtraggio restituisce più di un apt, lancia metodo di ordinamento
                 
                 //  array ottimizzato per visualizzazione su mappa 
-                this.mapApartmens = this.filteredApartments.map(({lat, lon , id , name , price , is_sponsored}) => ({lat, lon , id , name , price , is_sponsored}));
+                this.mapApartmens = this.filteredApartments.map(({lat, lon , id , name , price , is_sponsored , cover_img}) => ({lat, lon , id , name , price , is_sponsored, cover_img}));
 
                 //  array ottimizzato per visualizzazione card apt
                 this.listApartments = this.filteredApartments.map(({id , name , price, dist, beds, rating, is_sponsored, cover_img , excerpt}) => ({id , name , price, dist, beds, rating, is_sponsored, cover_img , excerpt}));

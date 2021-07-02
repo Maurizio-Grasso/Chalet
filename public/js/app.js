@@ -3193,14 +3193,16 @@ __webpack_require__.r(__webpack_exports__);
             id = _ref.id,
             name = _ref.name,
             price = _ref.price,
-            is_sponsored = _ref.is_sponsored;
+            is_sponsored = _ref.is_sponsored,
+            cover_img = _ref.cover_img;
         return {
           lat: lat,
           lon: lon,
           id: id,
           name: name,
           price: price,
-          is_sponsored: is_sponsored
+          is_sponsored: is_sponsored,
+          cover_img: cover_img
         };
       }); //  array ottimizzato per visualizzazione card apt
 
@@ -3908,13 +3910,13 @@ __webpack_require__.r(__webpack_exports__);
     this.markerIcon = L.icon({
       iconUrl: 'img/greenMarker.png',
       shadowUrl: 'img/markerShadow.png',
-      iconSize: [30, 44],
+      iconSize: [20, 30],
       // size of the icon
-      shadowSize: [60, 25],
+      shadowSize: [40, 15],
       // size of the shadow
-      iconAnchor: [15, 22],
+      iconAnchor: [20, 30],
       // point of the icon which will correspond to marker's location
-      shadowAnchor: [0, 0],
+      shadowAnchor: [10, 10],
       // the same for the shadow
       popupAnchor: [0, -22] // point from which the popup should open relative to the iconAnchor
 
@@ -4005,7 +4007,7 @@ __webpack_require__.r(__webpack_exports__);
         var newMarker = L.marker([apt.lat, apt.lon], {
           icon: _this.markerIcon
         });
-        newMarker.bindPopup('<div class="chalet-popup' + (apt.is_sponsored ? ' chalet-popup--sponsored' : '') + '"><img class="chalet-popup__image" src="storage/apartment_images/apt7_photo1.jpg" alt=""><h4 class="chalet-popup__name">' + apt.name + '</h4><span class="chalet-popup__price">' + apt.price + '&euro;</span><a class="chalet-popup__link" href="/single/' + apt.id + '">Dettagli <i class="fas fa-long-arrow-alt-right"></i></a></div>');
+        newMarker.bindPopup('<div class="chalet-popup' + (apt.is_sponsored ? ' chalet-popup--sponsored' : '') + '"><img class="chalet-popup__image" src="storage/' + apt.cover_img + '" alt=""><h4 class="chalet-popup__name">' + apt.name + '</h4><span class="chalet-popup__price">' + apt.price + '&euro;</span><a class="chalet-popup__link" href="/single/' + apt.id + '">Dettagli <i class="fas fa-long-arrow-alt-right"></i></a></div>');
 
         _this.markers.push(newMarker);
 
@@ -80400,7 +80402,7 @@ var render = function() {
                   attrs: { src: _vm.videoSrc, type: "video/mp4" }
                 }),
                 _vm._v(
-                  "\r\n                Browser non supportato!\r\n            "
+                  "\n                Browser non supportato!\n            "
                 )
               ]
             )
@@ -94811,8 +94813,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\feder\OneDrive\Desktop\semplicemente\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\feder\OneDrive\Desktop\semplicemente\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Maurizio\Google Drive\Corso-Boolean\Chalet\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Maurizio\Google Drive\Corso-Boolean\Chalet\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

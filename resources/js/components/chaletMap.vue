@@ -46,10 +46,10 @@
             this.markerIcon = L.icon({
                 iconUrl: 'img/greenMarker.png',
                 shadowUrl: 'img/markerShadow.png',
-                iconSize:     [30, 44], // size of the icon
-                shadowSize:   [60, 25], // size of the shadow
-                iconAnchor:   [15, 22], // point of the icon which will correspond to marker's location
-                shadowAnchor: [0, 0],  // the same for the shadow
+                iconSize:     [20, 30], // size of the icon
+                shadowSize:   [40, 15], // size of the shadow
+                iconAnchor:   [20, 30], // point of the icon which will correspond to marker's location
+                shadowAnchor: [10, 10],  // the same for the shadow
                 popupAnchor:  [0, -22] // point from which the popup should open relative to the iconAnchor
             });
 
@@ -147,7 +147,7 @@
                 
                 this.apartments.forEach(apt => {                    
                     let newMarker = L.marker([apt.lat, apt.lon] , {icon : this.markerIcon});
-                    newMarker.bindPopup('<div class="chalet-popup'+ (apt.is_sponsored ? ' chalet-popup--sponsored' : '') +'"><img class="chalet-popup__image" src="storage/apartment_images/apt7_photo1.jpg" alt=""><h4 class="chalet-popup__name">' + apt.name + '</h4><span class="chalet-popup__price">'+ apt.price +'&euro;</span><a class="chalet-popup__link" href="/single/'+apt.id+'">Dettagli <i class="fas fa-long-arrow-alt-right"></i></a></div>');
+                    newMarker.bindPopup('<div class="chalet-popup'+ (apt.is_sponsored ? ' chalet-popup--sponsored' : '') +'"><img class="chalet-popup__image" src="storage/' + apt.cover_img + '" alt=""><h4 class="chalet-popup__name">' + apt.name + '</h4><span class="chalet-popup__price">'+ apt.price +'&euro;</span><a class="chalet-popup__link" href="/single/'+apt.id+'">Dettagli <i class="fas fa-long-arrow-alt-right"></i></a></div>');
                     this.markers.push(newMarker);
                     newMarker.addTo(this.mymap);
                 });
