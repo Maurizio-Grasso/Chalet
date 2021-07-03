@@ -1,5 +1,28 @@
 .form {
     
+    &--auth {
+        background-color: $white;
+        padding: $spacing-standard;
+        border-radius: $border-radius-standard;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+
+        width: 100%;
+        max-width: 35rem;
+
+        .form__field {
+            margin-bottom: $spacing-standard;
+        }
+        
+        .form__input {
+            width: 100%;
+        }
+    }
+
     &__label {
         margin-right: $spacing-standard;
         }    

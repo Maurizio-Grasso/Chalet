@@ -20,8 +20,8 @@
         <div class="single-apartment__data">
             <h3 class="single-apartment__name">{{name}}</h3>
             
-            <p class="single-apartment__description">
-                {{excerpt}}
+            <p class="single-apartment__description" v-html="excerpt">
+                <!-- {{}} -->
             </p>
 
             <div class="single-apartment__services">

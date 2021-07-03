@@ -77,7 +77,8 @@
 
                         </div>
                         <div class="host-img">
-                            <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
+                            {{-- {{ $apartment['host']['name']}} --}}
+                            <img src="{{'/' . $apartment['host']['profile_pic']}}"
                                 alt="host-img">
                         </div>
 
@@ -148,7 +149,7 @@
                     <hr>
 
                     <section class="apartment-description">
-                        <p>{{$apartment['description']}}</p>
+                        {!!$apartment['description']!!}
                     </section>
 
                     <hr>
@@ -177,14 +178,13 @@
 
 
                 <div class="right-container">
-                    <div id="form-anchor" class="contact-form">
+                    <div id="form-anchor" class="form contact-form">
 
                         {{-- FORM INVIO MESSAGGIO----------- --}}
                         <form action="{{ route('saveMessage') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <h3 class="heading--primary">Contatta l'host per conoscere i dettagli</h3>
-                            <p> <i class="fas fa-star"></i> 5.0 &#183 Rome , Italy</p>
 
                             {{-- MAIL---------- --}}
                             @php

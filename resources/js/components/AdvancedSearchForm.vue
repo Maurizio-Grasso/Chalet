@@ -327,7 +327,7 @@ import AdvancedSearchPageVue from './AdvancedSearchPage.vue';
         &__group {
             display: flex;
             background-color: $color-primary-light;
-            padding: $spacing-tiny;
+            padding: .3rem;
         }
 
         // Form Field
@@ -341,13 +341,14 @@ import AdvancedSearchPageVue from './AdvancedSearchPage.vue';
             text-align: center;
             padding: $spacing-small;
             height: calc(#{$height-section-medium} - 2 * #{$spacing-tiny});
+            border-radius: $border-radius-standard;
             
             > * {
                 flex: 1 1 50%;
             }
 
             &:not(:last-child){
-                margin-right: $spacing-tiny;
+                margin-right: .3rem;
             }
 
             // Full Width Fields
@@ -362,7 +363,7 @@ import AdvancedSearchPageVue from './AdvancedSearchPage.vue';
             &--half {
                 padding: $spacing-standard;
 
-                flex: 0 0 calc((100% - #{$spacing-tiny}) / 2);                
+                flex: 0 0 calc((100% - .3rem) / 2);                
             }
 
             // Vertical Group (i.e. checkboxes container)
@@ -547,7 +548,8 @@ import AdvancedSearchPageVue from './AdvancedSearchPage.vue';
             flex-direction: row;
             justify-content: space-evenly;
 
-            max-width: calc(#{$width-inner-content} / 2);
+            // max-width: calc(#{$width-inner-content} / 2);
+            max-width: 100rem;
             padding-top: $spacing-more;
             padding-bottom: $spacing-more;
 

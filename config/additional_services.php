@@ -112,7 +112,11 @@
             'service_name' => "Essenziali bagno",
             'service_info' => "Asciugamani, saponi, carta igienica, occorrente per la pulizia del corpo e dei capelli",
             'service_icon' => "soap"
-
+        ],
+        [
+            'service_name' => "Vista Lago",
+            'service_info' => "",
+            'service_icon' => "water"
         ],
 
     ];

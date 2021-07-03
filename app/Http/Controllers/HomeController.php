@@ -64,9 +64,10 @@ class HomeController extends Controller
         ->first();
 
         $host = array(
-            'id'        => $apt_host->id ,
-            'name'      => $apt_host->name ,
-            'surname'   => $apt_host->surname ,
+            'id'            => $apt_host->id ,
+            'name'          => $apt_host->name ,
+            'surname'       => $apt_host->surname ,
+            'profile_pic'   => $apt_host->profile_pic
         );
 
         $apartment['host']    = $host;

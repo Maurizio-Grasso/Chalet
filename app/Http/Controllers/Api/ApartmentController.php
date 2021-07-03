@@ -154,7 +154,7 @@ class ApartmentController extends Controller
             ->where('id',$aptID)
             ->first();
 
-            $excerpt = substr($apt->description , 0 ,80) . '...';
+            $excerpt = substr($apt->description , 0 ,100) . '...';
 
             $cover_img = $this->getAptCoverImg($aptID);
      
@@ -241,7 +241,7 @@ class ApartmentController extends Controller
                 $is_sponsored = $this->checkSponsorship($apartment['id']);
 
                 // Genera una descrizione breve
-                $excerpt = substr($apartment['description'] , 0 ,80) . '...';
+                $excerpt = substr($apartment['description'] , 0 ,100) . '...';
 
                 // Crea array con i dati necessari per stampa e filtri    
                 $newChalet = array(

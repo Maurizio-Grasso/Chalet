@@ -169,6 +169,27 @@ h3 {
   color: #f39a34;
 }
 
+.form--auth {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.form--auth .form__field {
+  margin-bottom: 2rem;
+}
+
+.form--auth .form__input {
+  width: 100%;
+}
+
 .form__label {
   margin-right: 2rem;
 }
@@ -638,7 +659,7 @@ hr {
   margin: 0 auto;
   padding: 2rem;
   border-radius: 5px;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 64em) {
@@ -784,7 +805,7 @@ hr {
 
 .container .sponsored-gallery .sponsored-slider-phone .slider-phone-cards .slider-phone-card .slider-phone-img img {
   border-radius: 5px;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -822,7 +843,7 @@ hr {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -841,54 +862,14 @@ hr {
   line-height: 3rem;
 }
 
-.register-form,
-.login-form {
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+.main--bg-primary {
+  min-height: calc(100vh - 7rem);
   width: 100%;
-  max-width: 40rem;
-  background: #f39a34;
-  margin: 0 auto;
-  padding: 2rem 3rem;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.register-form .form__label,
-.register-form .form__label,
-.login-form .form__label,
-.login-form .form__label {
-  display: block;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.width_container {
-  width: 100%;
-  height: calc(100vh - 7rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #105310;
   background-image: linear-gradient(to bottom right, #348534, #105310);
-}
-
-.input_width {
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-
-div[class$=-form] {
-  margin-bottom: 0.5rem;
-}
-
-.btn--reg {
-  margin: 1rem 0;
-  width: 100%;
-}
-
-.btn--log {
-  margin: 1rem 0;
-  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {

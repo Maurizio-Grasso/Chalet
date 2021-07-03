@@ -57,11 +57,11 @@ $animation-time-very-slow : 1.2s;
 }
 
 @mixin shadow-standard {
-    box-shadow: 0 0 1rem rgba($black , .2);
+    box-shadow: 0 0 .5rem rgba($black , .15);
 }
 
 @mixin shadow-enhanced {
-    box-shadow: 0 0 2rem rgba($black , .3);
+    box-shadow: 0 0 1rem rgba($black , .25);
 }
 
 @mixin clearfix {
@@ -93,11 +93,4 @@ $animation-time-very-slow : 1.2s;
             @content
         };
     }
-
-    @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) {    // 1800px
-            @content
-        };
-    }
-
 }

@@ -992,4 +992,82 @@
             'img_description' => "immagine copertina",
             'is_cover' => 1
         ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo1.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 1
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo2.jpg",
+            'img_description' => "immagine copertina",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo3.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo4.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo5.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo6.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo7.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo8.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo9.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo10.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo11.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo12.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
+        [
+            'apartment_id' => 34,
+            'img_path' => "apartment_images/apt34_photo13.jpg",
+            'img_description' => "particolare appartamento",
+            'is_cover' => 0
+        ],
     ];

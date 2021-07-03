@@ -473,7 +473,7 @@
     ],
     
     [
-        'title'=> 'Chalet Un Passo dal Cielo',
+        'title'=> 'Chalet della Forcella',
         'address'=>'Via San Leonardo, 39042 Bressanone BZ',
         'user_id'=>1,
         'rooms_n'=>1,
@@ -582,6 +582,29 @@
         Vi aspettiamo per la vostra prossima vacanza all\'Hotel Chalet Gerard in Val Gardena!',
         'visible'=>'1',
         'price_per_night'=>240.00,
+        'rating'=>5.0,
+    ],
+
+    [
+        'title'=> 'Chalet Un Passo dal Cielo',
+        'address'=>'St.Veit, 27, 39030 Braies BZ',
+        'user_id'=>2,
+        'rooms_n'=>2,
+        'beds_n'=>6,
+        'bathroom_n'=>2,
+        'dimensions'=>150,
+        'latitude'=>'46.698469',
+        'longitude'=>'12.085695',
+        'description'=>'<p>Lussuoso Chalet in una delle cornici più belle delle <strong>Dolomiti di Braies</strong>.</p>
+                        <p>In un\'invidiabile posizione, proprio sulla riva del lago e con splendida vista sul massiccio della Croda del Becco</p>
+                        <p>Ideale per una fuga romantica o per un periodo di assoluto relax in una delle location più ricercate dell\'arco alpino</p>
+                        <p>Lo chalet, realizzato completamente in legno pregiato in pittoresco stile alpino, è stato recentemente restaurato e dispone di tutti i servizi che gli ospiti più esigenti potrebbero richiedere</p>
+                        <p>Nelle due camere da letto, entrambe con vista lago, possono trovare comodamente posto fino a 6 ospiti, più eventuali bambini fino a 3 anni, che pernottano gratuitamente in camera coi genitori e potranno usufruire su richiesta  di una culla</p>
+                        <p>I confortevoli servizi sono dotati di asciugamani, asciugacapelli, saponette e shampoo. Uno di essi dispone di comoda vasca idromassaggio, mentre nell\'altro trova spazio un comodo box doccia con base di 1,5m.</p>
+                        <p>Raggiungere lo Chalet ad Un Passo dal Cielo si rivelerà semplicissimo sia con mezzi propri (posto auto in parcheggio custodito incluso nel prezzo) che tramite mezzi pubblici. Su richiesta, è disponibile un servizio navetta da Bolzano, Belluno, Cortina d\'Ampezzo e Dobbiaco.</p>
+                        <p>Gli ospiti della struttura potranno inoltre beneficiare di tariffe conveniente per il noleggio barche disponibile in loco e per i pacchetti di escursioni guidate proposte da azienda partner</p>',
+        'visible'=>'1',
+        'price_per_night'=>220.00,
         'rating'=>5.0,
     ],
  ] ?>
