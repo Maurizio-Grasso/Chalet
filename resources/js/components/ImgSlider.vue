@@ -103,7 +103,7 @@
                     width: 100%;
                     height: $height-section-huge;
                     border-radius: $border-radius-standard;
-                    object-fit: cover;
+                    object-fit: contain;
                 }
             }
     }

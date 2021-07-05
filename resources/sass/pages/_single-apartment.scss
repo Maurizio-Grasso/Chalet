@@ -2,296 +2,441 @@
     padding-top: $height-section-medium;
 }
 
-h1 {
-    font-size: 4rem;
-    line-height: 5rem;
+.section-standard {
+    max-width: $width-inner-content;
+    margin: auto;
+    background-color: $white;
+    padding: $spacing-more $spacing-standard;
 }
-.service-list {
+
+.apt-heading {
+    &__title {
+        font-size: 4rem;
+        line-height: 5rem;
+        // margin-bottom: 0;
+    }
+}
+
+.outer-sticky-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.single-service {
-    flex: 1 0 calc(100% /3);
+    flex-wrap: nowrap;
+    align-items: stretch;
 
     @include responsive(tablet) {
-        flex: 1 0 calc(100% /2);
+        display: block;
+    }
+}
+
+.apt-info {
+    flex: 0 0 65%;
+    padding-right: $spacing-huge;
+
+    @include responsive(tablet) {
+        padding-right: 0;
+    }
+}
+
+.apt-facilities {
+    
+    &__list {
+        list-style-type: none;
     }
 
+    &__single {
+        margin-bottom: $spacing-more;
+    }
 
-    margin-bottom: $spacing-standard;
+    &__icon {
+        color: $color-primary;
+        margin-right: $spacing-small;
+        width: 2rem;
+        text-align: left;
+    }
+
+    &__name {
+        display: inline-block;
+        text-transform: capitalize;
+    }
+
+    &__description {
+        margin-top: $spacing-tiny;
+        margin-left: calc( 2rem + #{$spacing-small} + 5px);
+    } 
+}
+
+.apt-description {
+    p {
+        margin-bottom: $spacing-standard;
+    }
+}
+
+.additional-services {
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+
+    &__item {
+        flex: 1 0 calc(100% /3);
+        margin-bottom: $spacing-standard;
+        
+        @include responsive(tablet) {
+            flex: 1 0 calc(100% /2);
+        }        
+    }
 
     &__icon {
         color: $color-primary;
         margin-right: $spacing-standard;
         font-size: 2rem;
     }
+
 }
+
+
+.sticky-area {
+    flex: 1 1 auto;
+}
+
+.contact-form {
+    position: sticky;
+    top: 0;
+    
+    @include responsive(tablet) {
+        position: static;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: $spacing-standard;
+        border-radius: $border-radius-standard;
+
+        @include shadow-standard;
+    }
+
+    h3 {        
+        text-align: center;        
+        line-height: 3.5rem;
+        padding: 0 $spacing-standard;
+        margin-bottom: $spacing-standard;
+    }
+    
+    .form__input {
+        width: 100%;
+    }
+    .form__field {
+        margin-bottom: $spacing-standard;
+    }
+}
+
+
+
+
 
 hr {
     border-top-width: 0;
     border-color: $gray;
     margin-bottom: $spacing-standard;
 }
-.container {
-    padding: 0 $spacing-standard;
-    max-width: $width-inner-content;
-    margin: 0 auto;
-    background-color: $white;
 
-    i {
-        padding-right: $spacing-tiny;
-        @include responsive(phone) {
-            font-size: 150%;
-        }
-    }
-    i.fa-star {
-        @include responsive(phone) {
-            font-size: initial;
-        }
-    }
-    .apartment-title {
-        padding: $spacing-standard 0;
-    }
-    .font-weight--bold {
-        font-weight: bold;
-    }
-    .form-container {
-        display: flex;
-        padding: $spacing-more 0;
-        @include responsive(tablet) {
-            display: block;
-        }
-        .left-container {
-            width: 65%;
-            padding-right: $spacing-huge;
+.apt-position {
 
-            section {
-                margin-bottom: $spacing-more;
-                @include responsive(tablet) {
-                    margin-bottom: $spacing-standard;
-                }
-            }
-
-            @include responsive(tablet) {
-                width: 100%;
-            }
-
-            .type-host {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding-bottom: $spacing-standard;
-                .host-img {
-                    width: $spacing-huge;
-                    img {
-                        width: 100%;
-                        border-radius: 50%;
-                    }
-                }
-            }
-            .apartment-service {
-                padding: $spacing-small 0;
-                .service-card {
-                    padding: $spacing-small 0;
-                    display: flex;
-                    
-                    &:not(:last-child){
-                        margin-bottom: $spacing-standard;
-                    }
-                    
-                    .service-icon {
-                        color: $color-primary;
-                        font-size: 2rem;
-                        margin-right: $spacing-standard;
-                    }
-                }
-            }
-            .apartment-description {
-                padding: $spacing-standard 0;
-            }
-            .additional-services {
-                padding: $spacing-standard 0;
-                h3 {
-                    padding: $spacing-small 0;
-                }
-                .row {
-                    display: flex;
-                    padding: $spacing-small 0;
-                    .ad-service-card {
-                        width: 50%;
-                        display: flex;
-                    }
-                }
-            }
-        }
-
-        .right-container {
-            width: 35%;
-            @include responsive(tablet) {
-                width: 100%;
-                padding-top: 0;
-            }
-
-            .contact-form {
-                position: sticky;
-                top: calc(#{$height-section-medium} + 2rem);
-                @include responsive(tablet) {
-                    position: static;
-                }
-                .form__input {
-                    margin-bottom: $spacing-more;
-                }
-                
-                form {
-                    background: $color-secondary;
-                    width: calc(100% - 2 * #{$spacing-standard});
-                    margin: 0 auto;
-                    padding: $spacing-standard;
-                    border-radius: $border-radius-standard;
-                    @include shadow-enhanced;
-
-                    @include responsive(tablet) {
-                        width: 100%;
-                    }
-                }
-                p,
-                h3 {
-                    margin-bottom: $spacing-small;
-                }
-
-                h3 {
-                    font-size: 2rem;
-                    line-height: 3rem;
-                }
-                .btn {
-                    margin: $spacing-small 0;
-                }
-                input,
-                textarea,
-                .btn {
-                    display: block;
-                    width: 100%;
-                }
-                textarea {
-                    min-height: $height-section-big;
-                }
-                textarea {
-                    resize: none;
-                }
-            }
-        }
-    }
-    .map-title {
-        padding: $spacing-standard 0;
-        h3 {
-            padding-bottom: $spacing-small;
-        }
+    &__address {
+        margin-bottom: $spacing-standard;
     }
 
-    .chalet-map {
-        // flex: 0 0 50%;
-        
-        @include responsive(tablet) {
-            // position: static;
-            height: $height-section-huge;
-            width: 100%;
-        }
-
-    }
-
-    .hosted-by {
-        display: flex;
-        align-items: center;
-        padding: $spacing-standard 0;
-
-
-        @include responsive(tablet) {
-            display: block;
-            text-align: center;
-        }
-        
-        & > section {
-            flex: 0 0 calc(100% / 3);
-            p {
-                line-height: 2.5rem;
-            }
-            @include responsive(tablet) {
-                flex: none;
-                margin-bottom: $spacing-more;
-            }
-        }
-
-        .type-host {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-
-            @include responsive(tablet) {
-                justify-content: center;
-            }
-
-            .host-img {
-                width: $spacing-huge;
-                margin-right: $spacing-standard;
-                img {
-                    padding-right: $spacing-standard;
-                    width: 100%;
-                    border-radius: 50%;
-                }
-            }
-        }
-        .redirect-btn {
-            text-align: center;
-            @include responsive(phone) {
-                width: 100%;
-            }
-            .host-btn {
-                width: 80%;
-            }
-        }
-    }
-    .sponsored-gallery {
-        padding: $spacing-huge 0;
-        .sponsored-slider-phone {
-            display: none;
-            @include responsive(phone) {
-                display: block;
-            }
-            .slider-phone-cards {
-                .slider-phone-card {
-                    width: 100%;
-                    height: 30rem;
-                    margin-bottom: $spacing-huge;
-                    .slider-phone-img {
-                        height: 100%;
-                        width: 100%;
-                        padding: $spacing-small;
-                        img {
-                            border-radius: $border-radius-standard;
-                            @include shadow-enhanced;
-                            height: 100%;
-                            width: 100%;
-                            object-fit: cover;
-                        }
-                    }
-                    .slider-phone-description {
-                        padding-left: $spacing-small;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.sponsored-apt-section {
-    padding-bottom: $spacing-more;
-    p {
+    &__coordinates {
         margin-bottom: $spacing-standard;
     }
 }
+
+.bottom-info {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    >*{
+        flex: 0 0 calc(100% / 3);
+        text-align: center;
+    }
+}
+
+.sponsored-apt {
+
+    &__text {
+        margin-bottom: $spacing-standard;
+    }
+}
+
+
+// .container {
+//     padding: 0 $spacing-standard;
+//     max-width: $width-inner-content;
+//     margin: 0 auto;
+//     background-color: $white;
+
+//     i {
+//         padding-right: $spacing-tiny;
+//         @include responsive(phone) {
+//             font-size: 150%;
+//         }
+//     }
+//     i.fa-star {
+//         @include responsive(phone) {
+//             font-size: initial;
+//         }
+//     }
+//     .apartment-title {
+//         padding: $spacing-standard 0;
+//     }
+//     .font-weight--bold {
+//         font-weight: bold;
+//     }
+//     .form-container {
+//         display: flex;
+//         padding: $spacing-more 0;
+//         @include responsive(tablet) {
+//             display: block;
+//         }
+//         .left-container {
+//             width: 65%;
+//             padding-right: $spacing-huge;
+
+//             section {
+//                 margin-bottom: $spacing-more;
+//                 @include responsive(tablet) {
+//                     margin-bottom: $spacing-standard;
+//                 }
+//             }
+
+//             @include responsive(tablet) {
+//                 width: 100%;
+//             }
+
+//             .type-host {
+//                 display: flex;
+//                 justify-content: space-between;
+//                 align-items: center;
+//                 padding-bottom: $spacing-standard;
+//                 .host-img {
+//                     width: $spacing-huge;
+//                     img {
+//                         width: 100%;
+//                         border-radius: 50%;
+//                     }
+//                 }
+//             }
+//             .apartment-service {
+//                 padding: $spacing-small 0;
+//                 .service-card {
+//                     padding: $spacing-small 0;
+//                     display: flex;
+                    
+//                     &:not(:last-child){
+//                         margin-bottom: $spacing-standard;
+//                     }
+                    
+//                     .service-icon {
+//                         color: $color-primary;
+//                         font-size: 2rem;
+//                         margin-right: $spacing-standard;
+//                     }
+//                 }
+//             }
+//             .apartment-description {
+//                 padding: $spacing-standard 0;
+//             }
+//             .additional-services {
+//                 padding: $spacing-standard 0;
+//                 h3 {
+//                     padding: $spacing-small 0;
+//                 }
+//                 .row {
+//                     display: flex;
+//                     padding: $spacing-small 0;
+//                     .ad-service-card {
+//                         width: 50%;
+//                         display: flex;
+//                     }
+//                 }
+//             }
+//         }
+
+//         .right-container {
+//             width: 35%;
+//             @include responsive(tablet) {
+//                 width: 100%;
+//                 padding-top: 0;
+//             }
+//         }
+
+//         .contact-form {
+//             // position: sticky;
+//             // top: calc(#{$height-section-medium} + 2rem);
+
+//             // @include responsive(tablet) {
+//             //     position: static;
+//             // }
+//             .form__input {
+//                 margin-bottom: $spacing-more;
+//             }
+            
+//             form {
+//                 background: $color-secondary;
+//                 width: calc(100% - 2 * #{$spacing-standard});
+//                 margin: 0 auto;
+//                 padding: $spacing-standard;
+//                 border-radius: $border-radius-standard;
+//                 @include shadow-enhanced;
+
+//                 @include responsive(tablet) {
+//                     width: 100%;
+//                 }
+//             }
+//             p,
+//             h3 {
+//                 margin-bottom: $spacing-small;
+//             }
+
+//             h3 {
+//                 font-size: 2rem;
+//                 line-height: 3rem;
+//             }
+//             .btn {
+//                 margin: $spacing-small 0;
+//             }
+//             input,
+//             textarea,
+//             .btn {
+//                 display: block;
+//                 width: 100%;
+//             }
+//             textarea {
+//                 min-height: $height-section-big;
+//             }
+//             textarea {
+//                 resize: none;
+//             }
+//         }
+//     }
+    
+//     .map-title {
+//         padding: $spacing-standard 0;
+//         h3 {
+//             padding-bottom: $spacing-small;
+//         }
+//     }
+
+//     .chalet-map {
+//         // flex: 0 0 50%;
+        
+//         @include responsive(tablet) {
+//             // position: static;
+//             height: $height-section-huge;
+//             width: 100%;
+//         }
+
+//     }
+
+//     .hosted-by {
+//         display: flex;
+//         align-items: center;
+//         padding: $spacing-standard 0;
+
+
+//         @include responsive(tablet) {
+//             display: block;
+//             text-align: center;
+//         }
+        
+//         & > section {
+//             flex: 0 0 calc(100% / 3);
+//             p {
+//                 line-height: 2.5rem;
+//             }
+//             @include responsive(tablet) {
+//                 flex: none;
+//                 margin-bottom: $spacing-more;
+//             }
+//         }
+
+//         .type-host {
+//             display: flex;
+//             justify-content: flex-start;
+//             align-items: center;
+
+//             @include responsive(tablet) {
+//                 justify-content: center;
+//             }
+
+//             .host-img {
+//                 width: $spacing-huge;
+//                 margin-right: $spacing-standard;
+//                 img {
+//                     padding-right: $spacing-standard;
+//                     width: 100%;
+//                     border-radius: 50%;
+//                 }
+//             }
+//         }
+//         .redirect-btn {
+//             text-align: center;
+//             @include responsive(phone) {
+//                 width: 100%;
+//             }
+//             .host-btn {
+//                 width: 80%;
+//             }
+//         }
+//     }
+//     .sponsored-gallery {
+//         padding: $spacing-huge 0;
+//         .sponsored-slider-phone {
+//             display: none;
+//             @include responsive(phone) {
+//                 display: block;
+//             }
+//             .slider-phone-cards {
+//                 .slider-phone-card {
+//                     width: 100%;
+//                     height: 30rem;
+//                     margin-bottom: $spacing-huge;
+//                     .slider-phone-img {
+//                         height: 100%;
+//                         width: 100%;
+//                         padding: $spacing-small;
+//                         img {
+//                             border-radius: $border-radius-standard;
+//                             @include shadow-enhanced;
+//                             height: 100%;
+//                             width: 100%;
+//                             object-fit: cover;
+//                         }
+//                     }
+//                     .slider-phone-description {
+//                         padding-left: $spacing-small;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .sponsored-apt-section {
+//     padding-bottom: $spacing-more;
+//     p {
+//         margin-bottom: $spacing-standard;
+//     }
+// }
 
 .msgSent {
     position: fixed;

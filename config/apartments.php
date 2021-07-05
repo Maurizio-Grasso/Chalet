@@ -116,7 +116,7 @@
         'dimensions'=>60,
         'latitude'=>'46.539407',
         'longitude'=>'12.1356',
-        'description'=>'<p>In contesto signorile ideale per coppie, coppie di amici/escursionisti,che amano la comodità del centro paese</p>.
+        'description'=>'<p>In contesto signorile ideale per coppie, coppie di amici/escursionisti,che amano la comodità del centro paese.</p>
         <p>Direttamente sul Corso Italia di Cortina d\'Ampezzo, affitto monolocale tipico ampezzano, con un posto auto in garage</p>.
         <p>Composto da ampio salotto, comodo divano e letto matrimoniale,cucina a gas con 4 fuochi, lavastoviglie, lavello, e tutti gli utensili, tavolo e 2 sedie, piccolo balcone, ampio bagno con vasca doccia e lavatrice.</p>
         ',

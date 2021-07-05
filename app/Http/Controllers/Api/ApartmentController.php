@@ -69,6 +69,13 @@ class ApartmentController extends Controller
     **  Dato l'ID di un Appartamento
     **  controlla se ci sono sponsorizzazioni attive
     */
+    public function getExcerpt($description) 
+    {   
+        
+        $excerpt = str_replace(['<p>' , '</p>' , '<strong>' , '</strong>' , '<em>' , '</em>'] , '' , $description);
+        $excerpt = preg_replace('/\s+/', ' ', $excerpt);
+        return substr($excerpt , 0 ,100) . '...';
+    }
 
     public function checkSponsorship($aptID)
     {
@@ -154,7 +161,9 @@ class ApartmentController extends Controller
             ->where('id',$aptID)
             ->first();
 
-            $excerpt = substr($apt->description , 0 ,100) . '...';
+            // $excerpt = substr($apt->description , 0 ,125) . '...';
+            
+            $excerpt = $this->getExcerpt($apt->description);            
 
             $cover_img = $this->getAptCoverImg($aptID);
      
@@ -240,8 +249,9 @@ class ApartmentController extends Controller
                 // Controllo Eventuale Sponsorizzazione Attiva
                 $is_sponsored = $this->checkSponsorship($apartment['id']);
 
-                // Genera una descrizione breve
-                $excerpt = substr($apartment['description'] , 0 ,100) . '...';
+                // Richiede descrizione breve
+                // $excerpt = substr($apartment['description'] , 0 ,125) . '...';
+                $excerpt = $this->getExcerpt($apartment['description']);            
 
                 // Crea array con i dati necessari per stampa e filtri    
                 $newChalet = array(

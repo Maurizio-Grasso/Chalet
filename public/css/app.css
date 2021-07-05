@@ -472,33 +472,133 @@ h3 {
   padding-top: 7rem;
 }
 
-h1 {
+.section-standard {
+  max-width: 160rem;
+  margin: auto;
+  background-color: white;
+  padding: 3rem 2rem;
+}
+
+.apt-heading__title {
   font-size: 4rem;
   line-height: 5rem;
 }
 
-.service-list {
+.outer-sticky-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+@media (max-width: 64em) {
+  .outer-sticky-container {
+    display: block;
+  }
+}
+
+.apt-info {
+  flex: 0 0 65%;
+  padding-right: 7.5rem;
+}
+
+@media (max-width: 64em) {
+  .apt-info {
+    padding-right: 0;
+  }
+}
+
+.apt-facilities__list {
+  list-style-type: none;
+}
+
+.apt-facilities__single {
+  margin-bottom: 3rem;
+}
+
+.apt-facilities__icon {
+  color: #105310;
+  margin-right: 1rem;
+  width: 2rem;
+  text-align: left;
+}
+
+.apt-facilities__name {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.apt-facilities__description {
+  margin-top: 0.5rem;
+  margin-left: calc( 2rem + 1rem + 5px);
+}
+
+.apt-description p {
+  margin-bottom: 2rem;
+}
+
+.additional-services__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  list-style-type: none;
 }
 
-.single-service {
+.additional-services__item {
   flex: 1 0 calc(100% /3);
   margin-bottom: 2rem;
 }
 
 @media (max-width: 64em) {
-  .single-service {
+  .additional-services__item {
     flex: 1 0 calc(100% /2);
   }
 }
 
-.single-service__icon {
+.additional-services__icon {
   color: #105310;
   margin-right: 2rem;
   font-size: 2rem;
+}
+
+.sticky-area {
+  flex: 1 1 auto;
+}
+
+.contact-form {
+  position: sticky;
+  top: 0;
+}
+
+@media (max-width: 64em) {
+  .contact-form {
+    position: static;
+  }
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.contact-form h3 {
+  text-align: center;
+  line-height: 3.5rem;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form .form__input {
+  width: 100%;
+}
+
+.contact-form .form__field {
+  margin-bottom: 2rem;
 }
 
 hr {
@@ -507,320 +607,27 @@ hr {
   margin-bottom: 2rem;
 }
 
-.container {
-  padding: 0 2rem;
-  max-width: 160rem;
-  margin: 0 auto;
-  background-color: white;
-}
-
-.container i {
-  padding-right: 0.5rem;
-}
-
-@media (max-width: 37.5em) {
-  .container i {
-    font-size: 150%;
-  }
-}
-
-@media (max-width: 37.5em) {
-  .container i.fa-star {
-    font-size: initial;
-  }
-}
-
-.container .apartment-title {
-  padding: 2rem 0;
-}
-
-.container .font-weight--bold {
-  font-weight: bold;
-}
-
-.container .form-container {
-  display: flex;
-  padding: 3rem 0;
-}
-
-@media (max-width: 64em) {
-  .container .form-container {
-    display: block;
-  }
-}
-
-.container .form-container .left-container {
-  width: 65%;
-  padding-right: 7.5rem;
-}
-
-.container .form-container .left-container section {
-  margin-bottom: 3rem;
-}
-
-@media (max-width: 64em) {
-  .container .form-container .left-container section {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 64em) {
-  .container .form-container .left-container {
-    width: 100%;
-  }
-}
-
-.container .form-container .left-container .type-host {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 2rem;
-}
-
-.container .form-container .left-container .type-host .host-img {
-  width: 7.5rem;
-}
-
-.container .form-container .left-container .type-host .host-img img {
-  width: 100%;
-  border-radius: 50%;
-}
-
-.container .form-container .left-container .apartment-service {
-  padding: 1rem 0;
-}
-
-.container .form-container .left-container .apartment-service .service-card {
-  padding: 1rem 0;
-  display: flex;
-}
-
-.container .form-container .left-container .apartment-service .service-card:not(:last-child) {
+.apt-position__address {
   margin-bottom: 2rem;
 }
 
-.container .form-container .left-container .apartment-service .service-card .service-icon {
-  color: #105310;
-  font-size: 2rem;
-  margin-right: 2rem;
+.apt-position__coordinates {
+  margin-bottom: 2rem;
 }
 
-.container .form-container .left-container .apartment-description {
-  padding: 2rem 0;
-}
-
-.container .form-container .left-container .additional-services {
-  padding: 2rem 0;
-}
-
-.container .form-container .left-container .additional-services h3 {
-  padding: 1rem 0;
-}
-
-.container .form-container .left-container .additional-services .row {
+.bottom-info {
   display: flex;
-  padding: 1rem 0;
-}
-
-.container .form-container .left-container .additional-services .row .ad-service-card {
-  width: 50%;
-  display: flex;
-}
-
-.container .form-container .right-container {
-  width: 35%;
-}
-
-@media (max-width: 64em) {
-  .container .form-container .right-container {
-    width: 100%;
-    padding-top: 0;
-  }
-}
-
-.container .form-container .right-container .contact-form {
-  position: sticky;
-  top: calc(7rem + 2rem);
-}
-
-@media (max-width: 64em) {
-  .container .form-container .right-container .contact-form {
-    position: static;
-  }
-}
-
-.container .form-container .right-container .contact-form .form__input {
-  margin-bottom: 3rem;
-}
-
-.container .form-container .right-container .contact-form form {
-  background: #f39a34;
-  width: calc(100% - 2 * 2rem);
-  margin: 0 auto;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width: 64em) {
-  .container .form-container .right-container .contact-form form {
-    width: 100%;
-  }
-}
-
-.container .form-container .right-container .contact-form p,
-.container .form-container .right-container .contact-form h3 {
-  margin-bottom: 1rem;
-}
-
-.container .form-container .right-container .contact-form h3 {
-  font-size: 2rem;
-  line-height: 3rem;
-}
-
-.container .form-container .right-container .contact-form .btn {
-  margin: 1rem 0;
-}
-
-.container .form-container .right-container .contact-form input,
-.container .form-container .right-container .contact-form textarea,
-.container .form-container .right-container .contact-form .btn {
-  display: block;
-  width: 100%;
-}
-
-.container .form-container .right-container .contact-form textarea {
-  min-height: 20rem;
-}
-
-.container .form-container .right-container .contact-form textarea {
-  resize: none;
-}
-
-.container .map-title {
-  padding: 2rem 0;
-}
-
-.container .map-title h3 {
-  padding-bottom: 1rem;
-}
-
-@media (max-width: 64em) {
-  .container .chalet-map {
-    height: 50rem;
-    width: 100%;
-  }
-}
-
-.container .hosted-by {
-  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
-  padding: 2rem 0;
 }
 
-@media (max-width: 64em) {
-  .container .hosted-by {
-    display: block;
-    text-align: center;
-  }
-}
-
-.container .hosted-by > section {
+.bottom-info > * {
   flex: 0 0 calc(100% / 3);
-}
-
-.container .hosted-by > section p {
-  line-height: 2.5rem;
-}
-
-@media (max-width: 64em) {
-  .container .hosted-by > section {
-    flex: none;
-    margin-bottom: 3rem;
-  }
-}
-
-.container .hosted-by .type-host {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-@media (max-width: 64em) {
-  .container .hosted-by .type-host {
-    justify-content: center;
-  }
-}
-
-.container .hosted-by .type-host .host-img {
-  width: 7.5rem;
-  margin-right: 2rem;
-}
-
-.container .hosted-by .type-host .host-img img {
-  padding-right: 2rem;
-  width: 100%;
-  border-radius: 50%;
-}
-
-.container .hosted-by .redirect-btn {
   text-align: center;
 }
 
-@media (max-width: 37.5em) {
-  .container .hosted-by .redirect-btn {
-    width: 100%;
-  }
-}
-
-.container .hosted-by .redirect-btn .host-btn {
-  width: 80%;
-}
-
-.container .sponsored-gallery {
-  padding: 7.5rem 0;
-}
-
-.container .sponsored-gallery .sponsored-slider-phone {
-  display: none;
-}
-
-@media (max-width: 37.5em) {
-  .container .sponsored-gallery .sponsored-slider-phone {
-    display: block;
-  }
-}
-
-.container .sponsored-gallery .sponsored-slider-phone .slider-phone-cards .slider-phone-card {
-  width: 100%;
-  height: 30rem;
-  margin-bottom: 7.5rem;
-}
-
-.container .sponsored-gallery .sponsored-slider-phone .slider-phone-cards .slider-phone-card .slider-phone-img {
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-}
-
-.container .sponsored-gallery .sponsored-slider-phone .slider-phone-cards .slider-phone-card .slider-phone-img img {
-  border-radius: 5px;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.container .sponsored-gallery .sponsored-slider-phone .slider-phone-cards .slider-phone-card .slider-phone-description {
-  padding-left: 1rem;
-}
-
-.sponsored-apt-section {
-  padding-bottom: 3rem;
-}
-
-.sponsored-apt-section p {
+.sponsored-apt__text {
   margin-bottom: 2rem;
 }
 

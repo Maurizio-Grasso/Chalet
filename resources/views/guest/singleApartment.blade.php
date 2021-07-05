@@ -24,24 +24,214 @@
 
 @section('main')
                     
-    <main class="standard-padding">
+    <main>
+
+        <section class="section-standard apt-heading">
+
+            <h1 class="heading--primary apt-heading__title">{{$apartment['title']}}</h1>
+
+            <div class="apt-heading__rating">
+                <p> {{$apartment['rating']}} <i class="fas fa-star"></i> &#183 {{$apartment['address']}}</p>
+            </div>
+
+        </section>
+
+        <section class="section-standard apt-slider">
+
+            <img-slider :photos="{{json_encode($apartment['images'])}}"></img-slider>
+
+        </section>
+
+        <div class="outer-sticky-container section-standard">
+
+            <section class="apt-info">
+
+                <div class="host-box">
+                    host info
+                </div>
+
+                <ul class="apt-facilities__list">
+                    
+                    <li class="apt-facilities__single">
+                        <i class="apt-facilities__icon fas fa-home"></i>
+                        <h4 class="apt-facilities__name">casa intera</h4>
+                        <p class="apt-facilities__description">Appartamento:sarà a tua completa disposizione</p>
+                    </li>
+
+                    <li class="apt-facilities__single">                        
+                        <i class="apt-facilities__icon fas fa-bed"></i>
+                        <h4 class="apt-facilities__name">
+                            @if($apartment['rooms_n'] ==1) 1 Camera @else {{$apartment['rooms_n']}} Camere @endif da Letto
+                        </h4>
+                        <p class="apt-facilities__description">Questo chalet dispone di @if($apartment['rooms_n'] ==1) 1 Camera @else {{$apartment['rooms_n']}} Camere @endif</p>
+                    </li>
+
+                    
+                    <li class="apt-facilities__single">                        
+                        <i class="apt-facilities__icon fas fa-user-friends"></i>
+                        <h4 class="apt-facilities__name">
+                            @if($apartment['beds_n'] ==1) 1 Ospite @else {{$apartment['beds_n']}} Ospiti @endif
+                        </h4>
+                        <p class="apt-facilities__description">Può ospitare fino a @if($apartment['beds_n'] ==1) 1 Persona @else {{$apartment['beds_n']}} Persone @endif</p>
+                    </li>
+                    
+                    <li class="apt-facilities__single">
+                        <i class="apt-facilities__icon fas fa-shower"></i>
+                        <h4 class="apt-facilities__name">
+                            @if($apartment['bathroom_n'] ==1) 1 Bagno @else {{$apartment['bathroom_n']}} Bagni @endif                            
+                        </h4>
+                        <p class="apt-facilities__description">Asciugamani e prodotti per la pulizia sempre inclusi.</p>
+                    </li>
+                    
+                </ul>
+                
+                <hr>
+
+                <div class="apt-description">
+
+                    {!!$apartment['description']!!}
+
+                </div>
+
+                <hr>
+
+                <div class="additional-services">
+                    {{-- <section class="additional-services"> --}}
+
+                        <h3 class="heading--primary">Servizi Inclusi</h3>
+
+                        <ul class="additional-services__list">
+
+                            @foreach ($apartment['services'] as $service)
+                            
+                                <li class="additional-services__item">
+                                    <i class="additional-services__icon fas fa-{{$service['service_icon']}}"></i>
+                                    <span class="additional-services__name">{{$service['service_name']}}</span>
+                                </li>                            
+                            
+                            @endforeach
+                            
+                            </ul>
+
+                    {{-- </section> --}}
+                </div>
+
+                <hr>
+
+
+            </section>
+
+            <section class="sticky-area">
+
+                <div id="form-anchor" class="form contact-form">
+
+                    <form action="{{ route('saveMessage') }}" method="post" enctype="multipart/form-data">
+
+                        @csrf
+
+                        <h3 class="heading--primary">Contatta l'host per conoscere i dettagli</h3>
+
+                        @php
+                            use Illuminate\Support\Facades\Auth;
+                            $isLoggedIn = Auth::check() ? true : false;
+                        @endphp
+
+                        <div class="form__field">
+                            <input type="email" name="email_sender" class="form__input" placeholder="Inserisci email" value="{{$isLoggedIn ? Auth::user()->email : null }}" required>
+                            {{-- @error('email_sender')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror --}}
+                        </div>
+                        
+                        <div class="form__field">
+                            <textarea class="form__input" name="message_text" id="message_text" name="message_text" placeholder="Scrivi un messaggio per il proprietario" required minlength="50"></textarea>
+                            {{-- @error('message_text')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror --}}
+                        </div>
+                                                
+                        <button class="btn btn--primary" type="submit">Invia Messaggio</button>
+
+                        <div class="form__field">
+                            <input type="hidden" name="apartment_id" value="{{ $apartment['id'] }}">
+                        </div>
+
+                    </form>
+                    
+                </div>
+
+            </section>
+
+        </div>{{-- Outer Sticky Container --}}
+
+        <section class="section-standard apt-position">
+
+            <div class="map-title">
+
+                <h3 class="heading--primary">Posizione</h3>
+
+                <p class="apt-position__address">{{$apartment['address']}}</p>
+
+                <p class="apt-position__coordinates">
+                    <span><strong class="color-primary">Lat:</strong>{{$apartment['latitude']}}</span> <span><strong class="color-primary">Lon:</strong>{{$apartment['longitude']}}</span>
+                </p>
+
+            </div>
+            
+            <single-chalet-map
+                :longitude="{{$apartment['longitude']}}" 
+                :latitude="{{$apartment['latitude']}}">
+    
+                <!-- Mappa -->
+
+            </single-chalet-map>
+
+        </section>
+
+        <section class="section-standard bottom-info">
+            
+            <div class="host-box">
+                host info
+            </div>
+
+            <div class="bottom-info__warning">
+                <p>Tanti Chalet simili a <span class="color-primary">{{$apartment['title']}}</span> sono già al completo sul nostro sito. Non farti sfuggire questa occasione e prenota subito a soli <span class="color-primary">{{$apartment['price_per_night']}}&euro;</span> a notte, senza commissioni e con cancellazione gratuita*!</p>
+            </div>
+
+            <div class="bottom-info__btn">
+
+                <a href="#form-anchor" class="btn btn--primary host-btn">
+                    Contatta l'host ora
+                </a>
+            </div>
+
+        </section>
+
+        <section class="section-standard sponsored-apt">
+            
+            <h3 class="heading--primary">Altri chalet in evidenza</h3>
+
+            <p class="sponsored-apt__text">Ti piace ma non sei del tutto sicuro? Da' un'occhiata anche a questi chalet, selezionati fra le migliori opzioni oggi esistenti in Italia!</p>
+
+            <sponsored-slider>
+
+                {{-- Sponsored Apartments Slider --}}
+
+            </sponsored-slider>
+
+        </section>
+
+
+        <back-to-top></back-to-top>
 
         <div class="container">
             <section class="apartment-title">
-                <h1 class="heading--primary">{{$apartment['title']}}</h1>
-                <div class="rating-location">
-                    <p> {{$apartment['rating']}} <i class="fas fa-star"></i> &#183 {{$apartment['address']}}</p>
-                </div>
+                
             </section>
         </div>
 
-        <img-slider :photos="{{json_encode($apartment['images'])}}">
 
-            {{-- slider immagini appartamento --}}
-
-        </img-slider>
-
-        <div class="container">
+        {{-- <div class="container">
             <div class="form-container">
                 <div class="left-container">
 
@@ -77,7 +267,6 @@
 
                         </div>
                         <div class="host-img">
-                            {{-- {{ $apartment['host']['name']}} --}}
                             <img src="{{'/' . $apartment['host']['profile_pic']}}"
                                 alt="host-img">
                         </div>
@@ -172,21 +361,21 @@
 
                     </section>
 
-                </div>
+                </div> --}}
 
 
 
 
-                <div class="right-container">
+                {{-- <div class="right-container">
                     <div id="form-anchor" class="form contact-form">
 
-                        {{-- FORM INVIO MESSAGGIO----------- --}}
+                        
                         <form action="{{ route('saveMessage') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <h3 class="heading--primary">Contatta l'host per conoscere i dettagli</h3>
 
-                            {{-- MAIL---------- --}}
+                            
                             @php
                                 use Illuminate\Support\Facades\Auth;
                                 $isLoggedIn = Auth::check() ? true : false;
@@ -199,7 +388,7 @@
                                 @enderror
                             </div>
 
-                            {{-- TESTO MESSAGGIO----------- --}}
+                            
                             <div class="form-group">
                                 <textarea class="form__input" name="message_text" id="message_text" name="message_text" placeholder="Scrivi un messaggio per il proprietario" required minlength="50"></textarea>
                                 @error('message_text')
@@ -207,7 +396,7 @@
                                 @enderror
                             </div>
 
-                            {{-- ID APT---------- --}}
+                            
                             <div class="form-group">
                                 <input type="hidden" name="apartment_id" value="{{ $apartment['id'] }}">
                             </div>
@@ -221,11 +410,11 @@
                 </div>
             </div>
 
-            <hr>
+            <hr> --}}
             
-            {{-- Mappa appartamento --}}
 
-            <section class="apartment-map">
+
+            {{-- <section class="apartment-map">
                 <div class="map-title">
                     <h3 class="heading--primary">Posizione</h3>
 
@@ -236,21 +425,18 @@
 
                 </div>
                 
-            <single-chalet-map
-                :longitude="{{$apartment['longitude']}}" 
-                :latitude="{{$apartment['latitude']}}">
-    
-                <!-- Mappa -->
-    
-            </single-chalet-map>
+                <single-chalet-map
+                    :longitude="{{$apartment['longitude']}}" 
+                    :latitude="{{$apartment['latitude']}}">
+                </single-chalet-map>
 
             </section>
             
-            <hr>
+            <hr> --}}
             
-            {{-- Piccola Sezione Host             --}}
 
-            <section class="hosted-by">
+
+            {{-- <section class="hosted-by">
 
                 <section class="type-host">
 
@@ -271,21 +457,20 @@
                 </section>
 
                 <section class="redirect-btn">
-                    {{--Al click la pagina si ridireziona al form di inserimento messaggio --}}
 
                     <a href="#form-anchor" class="btn btn--primary host-btn">
                         Contatta l'host ora
                     </a>
                 </section>
 
-            </section>
+            </section> --}}
 
 
-        <hr>
+        {{-- <hr> --}}
 
-            {{-- Slider di apt sponsorizzati --}}
 
-        <section class="sponsored-apt-section">
+
+        {{-- <section class="sponsored-apt-section">
             
             <h3 class="heading--primary">Altri chalet in evidenza</h3>
 
@@ -293,12 +478,12 @@
 
                 <sponsored-slider></sponsored-slider>
 
-        </section>
+        </section> --}}
 
 
     </div>
 
-    <back-to-top></back-to-top>
+    {{-- <back-to-top></back-to-top> --}}
 
 @endsection
 
