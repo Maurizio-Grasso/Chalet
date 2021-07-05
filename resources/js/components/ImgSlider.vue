@@ -40,14 +40,8 @@
 
 </template>
 
-<!-- Utilizzo Vue -->
-
 <script>
         export default {
-        mounted() {
-            
-        } 
-        ,
         data() {
             return {
                 active: "active",
@@ -57,27 +51,25 @@
         props : ['photos'],
         methods : {
             prevImage: function() {
-            this.counter--;
-            if (this.counter < 0) {
-                this.counter = (this.photos.length - 1);
-                console.log(this.counter);
+                this.counter--;
+                if (this.counter < 0) {
+                    this.counter = (this.photos.length - 1);
+                    console.log(this.counter);
+                }
+            },
+            nextImage: function() {
+                this.counter++;
+                if (this.counter > this.photos.length - 1) {
+                    this.counter = 0;
+                    console.log(this.counter);
+                }
+            },
+            circleClick: function(index) {
+                this.counter = index;
+            },
             }
-        },
-        nextImage: function() {
-            this.counter++;
-            if (this.counter > this.photos.length - 1) {
-                this.counter = 0;
-                console.log(this.counter);
-            }
-        },
-        circleClick: function(index) {
-            this.counter = index;
-        },
         }
-    }
 </script>
-
-<!-- Style della pagina. Scoped=>Valido solo per la pagina -->
 
 <style scoped lang="scss">
 
@@ -91,18 +83,24 @@
         position: relative;
         margin: auto;
         width: 100%;
+        background-color: rgba($color-primary,.25);
+        padding: $spacing-standard;
+        border-radius: $border-radius-standard;
 
             .images {
-                // height: 100%;
                 text-align: center;
                 img.active {
-                display: inline-block;
+                // display: inline-block;
                 }
 
                 .img_slider {
-                    width: 100%;
+                    // width: 100%;
                     height: $height-section-huge;
                     border-radius: $border-radius-standard;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: $spacing-standard;
                     object-fit: contain;
                 }
             }
@@ -111,7 +109,7 @@
     .next {
         position: absolute;
         color: $white;
-        top:calc( #{$height-section-huge} / 2);
+        top:calc( #{$height-section-huge} / 2 + #{$spacing-standard});
         transform: translateY(-50%) scaleY(1.5);
         font-size: 8rem;
         opacity: .75;
@@ -134,12 +132,9 @@
 
 
     .nav {
-            // @include responsive(phone) {
-            //     display: none;
-            // }
         padding: $spacing-tiny;
         border-radius: $border-radius-standard;
-        background: rgba(0, 0, 0, .7);
+        background-color: rgba($color-primary,.25);
     }
 
     .img_preview {
@@ -165,9 +160,8 @@
         }
     }
     .slider-wrapper.none {
-    display: none;
+        display: none;
     }
 }
-
 
 </style>

@@ -36,10 +36,10 @@
         z-index: 850;
         bottom: $spacing-standard;
         right: $spacing-standard;
-        background-color: $color-primary-light;
+        background-color: $color-primary;
         text-align: center;
         border-radius: $border-radius-standard;
-        border: 1px solid $color-primary-light;
+        border: 1px solid $color-primary;
         transition: background $animation-time-standard , opacity $animation-time-very-slow;
 
 
@@ -65,7 +65,7 @@
             background-color: $white;            
 
             .back-to-top__link {
-                color: $color-primary-light;
+                color: $color-primary;
             }
         }
 

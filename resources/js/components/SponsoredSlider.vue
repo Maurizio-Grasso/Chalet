@@ -141,12 +141,6 @@
             flex: 0 0 100%;
         }
 
-        // @include responsive(phone) {
-        //     width: 100%;
-        //     height: $height-section-big;
-        //     margin-bottom:$spacing-more;
-        // }
-        
         &:link ,
         &:visited,
         &:active,
