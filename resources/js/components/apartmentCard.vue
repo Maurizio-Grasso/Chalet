@@ -20,20 +20,15 @@
         <div class="single-apartment__data">
             <h3 class="single-apartment__name">{{name}}</h3>
             
-            <p class="single-apartment__description" v-html="excerpt">
-                <!-- {{}} -->
-            </p>
+            <p class="single-apartment__description" v-html="excerpt"></p>
 
             <div class="single-apartment__services">
                 
                 <span class="single-apartment__rating"><i class="fas fa-star"></i>{{rating}}</span>
-                <span class="single-apartment__beds hide-on-mobile"><i class="fas fa-user"></i>{{beds}}</span>
-                <!-- <span class="single-apartment__rating"><i class="fas fa-restroom"></i>2</span> -->
+                <span class="single-apartment__beds"><i class="fas fa-user"></i>{{beds}}</span>
                 <span class="single-apartment__price"><i class="fas fa-euro-sign"></i>{{price}}</span>
-                <span v-if="dist" fclass="single-apartment__distance"><i class="fas fa-map-marker-alt"></i>{{Math.round(dist * 100) / 100}} Km</span>
+                <span v-if="dist" class="single-apartment__distance hide-on-mobile"><i class="fas fa-map-marker-alt"></i>{{Math.round(dist * 100) / 100}} Km</span>
                 
-                <!-- <a :href="'single/'+id" class="btn btn--secondary btn--small">Prenota</a> -->
-
             </div>
         </div>
 
@@ -62,7 +57,6 @@
         background-color: $white;
         text-align: center;
         transition: box-shadow $animation-time-slow;
-        // transition: color $animation-time-standard;
 
         @include shadow-standard;
 
@@ -95,6 +89,10 @@
 
         &:not(:last-child){
             margin-bottom: $spacing-more;
+            
+            @include responsive(phone) {
+                margin-bottom: $spacing-standard;
+            }
         }
 
         &__image-container {
@@ -126,7 +124,10 @@
         }
 
         &__description {
-            // font-size: 80%;
+            @include responsive(phone) {
+                font-size: 80%;
+                line-height: 1.6rem;
+            }
         }
 
         &__services {

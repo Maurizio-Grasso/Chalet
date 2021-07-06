@@ -3,14 +3,22 @@
     margin-left: auto;
     margin-right: auto;
     background-color: $white;
-    padding: $spacing-huge $spacing-standard $spacing-standard;
+    padding: $spacing-huge $spacing-more 0;
+
+    @include responsive(phone){
+        padding: $spacing-more $spacing-standard 0;
+    }
 
     &__heading {
-        // margin-top: $spacing-huge;
         font-size: 3.5rem;
         line-height: 4.5rem;
         letter-spacing: 3px;
         margin-bottom: $spacing-huge;
+        
+        @include responsive(phone){
+            margin-bottom: $spacing-more;
+        }
+
     }
 }
 
@@ -28,6 +36,7 @@
         border-radius: $border-radius-standard;
         position: relative;
         padding: $spacing-standard;
+
         
         &::before {
             content: '';

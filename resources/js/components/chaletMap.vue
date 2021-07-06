@@ -48,7 +48,7 @@
                 shadowUrl: 'img/markerShadow.png',
                 iconSize:     [20, 30], // size of the icon
                 shadowSize:   [40, 15], // size of the shadow
-                iconAnchor:   [20, 30], // point of the icon which will correspond to marker's location
+                iconAnchor:   [10, 30], // point of the icon which will correspond to marker's location
                 shadowAnchor: [10, 10],  // the same for the shadow
                 popupAnchor:  [0, -22] // point from which the popup should open relative to the iconAnchor
             });
@@ -115,7 +115,7 @@
                     color: 'green',
                     fillColor: 'green',
                     fillOpacity: 0.05,
-                    radius: this.radius * 1000
+                    radius: this.radius * 1000 + 500
                 }).addTo(this.mymap);                
 
             },
@@ -186,15 +186,15 @@
             position: fixed;
             bottom: $height-section-big;            
             right: $spacing-more;                        
-            height: $height-section-medium;
-            line-height: $height-section-medium;
-            width: $height-section-medium;
+            height: $height-section-small;
+            line-height: $height-section-small;
+            width: $height-section-small;
             transform: translateY(50%);
             z-index: 500;            
             background-color: $white;
             text-align: center;
             border-radius: 50%;
-            font-size: 3rem;
+            font-size: 2.5rem;
             border: 1px solid $color-primary-light;
             transition: background $animation-time-standard , opacity $animation-time-very-slow;
             color: $color-primary-light;

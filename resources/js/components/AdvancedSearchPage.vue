@@ -290,16 +290,19 @@
 
         .apartments-list {
             width: 100%;
-            padding: $spacing-standard;
+            padding: $spacing-standard $spacing-more;
             padding-right: 50%;
             height: calc(100vh - 2 * #{$height-section-medium});
             overflow-x: auto;
             overflow-y: auto;
+
             @include responsive(tablet) {
                 padding-right: $spacing-standard;
-                // padding-right: 0;
-                // padding-left: 0;
                 height: calc( 100% - #{$height-section-big} - #{$height-section-medium});
+            }
+
+            @include responsive(phone) {
+                padding: $spacing-standard;
             }
 
             &--map-hidden {

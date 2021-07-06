@@ -157,6 +157,7 @@ hr {
 
 .contact-form {
     position: sticky;
+    top: 0;
     padding-top: $height-section-medium + 4rem;
 
     @include responsive(tablet) {
@@ -189,6 +190,11 @@ hr {
 
     .form__field {
         margin-bottom: $spacing-standard;
+    }
+
+    textarea {
+        min-height: $height-section-big;
+        resize: none;
     }
 }
 

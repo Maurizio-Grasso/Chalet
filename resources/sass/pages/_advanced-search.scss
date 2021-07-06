@@ -8,18 +8,18 @@
 
     .apartments-list {
         width: 100%;
-        padding: $spacing-standard;
+        padding: $spacing-standard $spacing-more;
         padding-right: 50%;
         height: calc(100vh - 2 * #{$height-section-medium});
-        overflow-x: auto;
-        overflow-y: auto;
+        overflow: auto;
+
         @include responsive(tablet) {
             padding-right: $spacing-standard;
             height: calc( 100% - #{$height-section-big} - #{$height-section-medium});
         }
 
         &--map-hidden {
-            height: calc(  100% - #{$height-section-medium}); 
+            height: calc(  100% - #{$height-section-medium});
         }
     }
 }

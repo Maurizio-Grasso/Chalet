@@ -145,6 +145,11 @@
     width: 100%;
     background-color: $white;
     margin-bottom: $spacing-more;
+
+    @include responsive(phone) {
+        margin-bottom: $spacing-standard;
+    }
+    
     border-radius: $border-radius-standard;
     padding: $spacing-standard;
     border: 1px dashed $orange;

@@ -15,7 +15,7 @@
 
 body {
   box-sizing: border-box;
-  background-color: rgba(16, 83, 16, 0.05);
+  background-color: rgba(199, 199, 199, 0.05);
 }
 
 ::-moz-selection {
@@ -40,6 +40,12 @@ body {
   color: #105310;
   text-transform: capitalize;
   margin-bottom: 3rem;
+}
+
+@media (max-width: 37.5em) {
+  .heading--primary {
+    margin-bottom: 2rem;
+  }
 }
 
 h2 {
@@ -252,7 +258,7 @@ h3 {
 
 .header {
   height: 7rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   color: #105310;
   position: fixed;
   z-index: 900;
@@ -260,11 +266,13 @@ h3 {
   left: 0;
   width: 100%;
   letter-spacing: 1px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 64em) {
   .header {
     position: absolute;
+    box-shadow: none;
   }
 }
 
@@ -274,9 +282,15 @@ h3 {
 
 .header__inner {
   max-width: 160rem;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   margin: 0 auto;
   height: 100%;
+}
+
+@media (max-width: 37.5em) {
+  .header__inner {
+    padding: 1rem 2rem;
+  }
 }
 
 .header__nav {
@@ -304,7 +318,6 @@ h3 {
   padding: 0.5rem;
   background-image: linear-gradient(to bottom right, rgba(52, 133, 52, 0.9), rgba(16, 83, 16, 0.9));
   border-radius: 5px;
-  transform: scale(1.1);
 }
 
 .header__toggle-button {
@@ -393,7 +406,13 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
-  padding: 7.5rem 2rem 2rem;
+  padding: 7.5rem 3rem 0;
+}
+
+@media (max-width: 37.5em) {
+  .home-section {
+    padding: 3rem 2rem 0;
+  }
 }
 
 .home-section__heading {
@@ -401,6 +420,12 @@ h3 {
   line-height: 4.5rem;
   letter-spacing: 3px;
   margin-bottom: 7.5rem;
+}
+
+@media (max-width: 37.5em) {
+  .home-section__heading {
+    margin-bottom: 3rem;
+  }
 }
 
 .become-host {
@@ -626,6 +651,7 @@ hr {
 
 .contact-form {
   position: sticky;
+  top: 0;
   padding-top: 11rem;
 }
 
@@ -659,6 +685,11 @@ hr {
 
 .contact-form .form__field {
   margin-bottom: 2rem;
+}
+
+.contact-form textarea {
+  min-height: 20rem;
+  resize: none;
 }
 
 .apt-position__address {

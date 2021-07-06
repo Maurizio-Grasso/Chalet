@@ -7,6 +7,9 @@ body {
     color: $color-primary;
     text-transform: capitalize;
     margin-bottom: $spacing-more;
+    @include responsive(phone) {
+        margin-bottom: $spacing-standard;
+    }
 }
 
 h2{

@@ -75,7 +75,7 @@
             ed il form per contattare l'host 
         --}}
 
-        <section class="main-section ">
+        <section class="main-section "> 
 
             <div class="outer-sticky-container">
                 
@@ -99,7 +99,7 @@
                         <li class="apt-facilities__single">
                             <i class="apt-facilities__icon fas fa-home"></i>
                             <h4 class="apt-facilities__name">casa intera</h4>
-                            <p class="apt-facilities__description">Appartamento:sarà a tua completa disposizione</p>
+                            <p class="apt-facilities__description">L'intero appartamento sarà a tua completa disposizione</p>
                         </li>
                         
                         <li class="apt-facilities__single">                        
@@ -175,16 +175,10 @@
 
                             <div class="form__field">
                                 <input type="email" name="email_sender" class="form__input" placeholder="Inserisci email" value="{{$isLoggedIn ? Auth::user()->email : null }}" required>
-                                {{-- @error('email_sender')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror --}}
                             </div>
 
                             <div class="form__field">
-                                <textarea class="form__input" name="message_text" id="message_text" name="message_text" placeholder="Scrivi un messaggio per il proprietario" required minlength="50"></textarea>
-                                {{-- @error('message_text')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror --}}
+                                <textarea class="form__input" name="message_text" id="message_text" name="message_text" placeholder="Scrivi un messaggio per il proprietario" required minlength="50"></textarea>                            
                             </div>
                             
                             <button class="btn btn--primary" type="submit">Invia Messaggio</button>

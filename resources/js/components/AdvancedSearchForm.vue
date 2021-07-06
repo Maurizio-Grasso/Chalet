@@ -339,9 +339,15 @@ import AdvancedSearchPageVue from './AdvancedSearchPage.vue';
             background-color: $white;
             flex: 1 1 auto;
             text-align: center;
-            padding: $spacing-small;
+            // padding: $spacing-small;
+            padding: calc(#{$spacing-more} - 3px);
+
             height: calc(#{$height-section-medium} - 2 * #{$spacing-tiny});
             border-radius: $border-radius-standard;
+
+            @include responsive(phone) {
+                padding: calc(#{$spacing-standard} - 3px);
+            }
             
             > * {
                 flex: 1 1 50%;
@@ -354,14 +360,16 @@ import AdvancedSearchPageVue from './AdvancedSearchPage.vue';
             // Full Width Fields
 
             &--full {
-                padding: $spacing-standard;
+                // padding: calc(#{$spacing-more} - 3px);
                 flex: 0 0 100%;
+            
+
             }
 
             // 50% Width Fields
 
             &--half {
-                padding: $spacing-standard;
+                // padding: calc(#{$spacing-more} - 3px);
 
                 flex: 0 0 calc((100% - .3rem) / 2);                
             }
@@ -570,13 +578,6 @@ import AdvancedSearchPageVue from './AdvancedSearchPage.vue';
             -ms-user-select: none;
             user-select: none;
 
-
-            &:hover input ~ .checkbox__checkmark {
-                // Style Hover
-            }
-            & input:checked ~ .checkbox__checkmark {
-                // Style Checked
-            }
             & input:checked ~ .checkbox__checkmark:after {
                 display: block;
             }

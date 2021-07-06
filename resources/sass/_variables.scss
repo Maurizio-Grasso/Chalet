@@ -14,7 +14,11 @@ $border-radius-more : 15px;
 $spacing-tiny       : .5rem;
 $spacing-small      : 1rem;
 $spacing-standard   : 2rem;
+
 $spacing-more       : 3rem;
+
+
+
 $spacing-huge       : 7.5rem;
 
 $font-size-standard : 1.6rem;
@@ -36,7 +40,7 @@ $color-secondary: rgb(243, 154, 52);
 $color-secondary-light: lighten($color-secondary , 20%);
 $color-secondary-dark: darken($color-secondary , 20%);
 
-$bg-transparent: rgba($white , .8);
+$bg-transparent: rgba($white , .9);
 $bg-transparent-light: rgba($white , .25);
 
 
