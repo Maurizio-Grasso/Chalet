@@ -89,13 +89,10 @@
 
             .images {
                 text-align: center;
-                img.active {
-                // display: inline-block;
-                }
 
                 .img_slider {
-                    // width: 100%;
                     height: $height-section-huge;
+                    width: 100%;
                     border-radius: $border-radius-standard;
                     display: block;
                     margin-left: auto;

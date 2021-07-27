@@ -115,7 +115,7 @@
                     color: 'green',
                     fillColor: 'green',
                     fillOpacity: 0.05,
-                    radius: this.radius * 1000 + 500
+                    radius: this.radius * 1000 + 1000
                 }).addTo(this.mymap);                
 
             },
